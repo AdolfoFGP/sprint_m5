@@ -63,7 +63,9 @@ CREATE TABLE soporte (
 id_usuario INT,
 id_operario INT,
 fecha DATE,
-evaluación TINYINT);
+evaluación TINYINT,
+CONSTRAINT usuario_fk FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+CONSTRAINT operario_fk FOREIGN KEY (id_operario) REFERENCES operario(id_operario));
 
 INSERT INTO soporte (id_usuario, id_operario, fecha, evaluación) VALUES
 (1, 2, '2023-03-15', 4),
